@@ -477,8 +477,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatrixSpawner
   chickenPrefab: {fileID: 2204942101264156852, guid: a0cd88b0e17cc8e4c96184bb44cb7dad, type: 3}
-  rows: 1
-  columns: 4
+  rows: 2
+  columns: 2
   gap: 1.5
   zDepth: 10
   moveDistance: 1
@@ -611,7 +611,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1804642995804468694, guid: 8b76e784a0aed8245b1f78c3f71461ba, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1587889009}
+      addedObject: {fileID: 1587889008}
     - targetCorrespondingSourceObject: {fileID: 1804642995804468694, guid: 8b76e784a0aed8245b1f78c3f71461ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1587889000}
@@ -620,10 +620,10 @@ PrefabInstance:
       addedObject: {fileID: 1587889004}
     - targetCorrespondingSourceObject: {fileID: 1804642995804468694, guid: 8b76e784a0aed8245b1f78c3f71461ba, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1587889008}
+      addedObject: {fileID: 1587889007}
     - targetCorrespondingSourceObject: {fileID: 1804642995804468694, guid: 8b76e784a0aed8245b1f78c3f71461ba, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1587889007}
+      addedObject: {fileID: 1587889009}
   m_SourcePrefab: {fileID: 100100000, guid: 8b76e784a0aed8245b1f78c3f71461ba, type: 3}
 --- !u!1 &1587888995 stripped
 GameObject:
@@ -683,21 +683,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1587888995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.DecisionRequester
-  DecisionPeriod: 5
-  DecisionStep: 0
-  TakeActionsBetweenDecisions: 1
---- !u!114 &1587889008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587888995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Policies.BehaviorParameters
@@ -711,16 +696,16 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 69f57524cfd96ac49b3cd1d0fc247dba, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 2
+  m_BehaviorType: 0
   m_BehaviorName: ShipBehavior
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_DeterministicInference: 0
   m_ObservableAttributeHandling: 0
---- !u!114 &1587889009
+--- !u!114 &1587889008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -735,12 +720,27 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
-  moveSpeed: 3
-  minX: -3
-  maxX: 3
+  MaxStep: 0
+  moveSpeed: 8
+  minX: -7
+  maxX: 7
   bulletPrefab: {fileID: 3765456831511402023, guid: 5f183235902323a439a0461ee093a18b, type: 3}
   shootCooldown: 0.2
+--- !u!114 &1587889009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587888995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.DecisionRequester
+  DecisionPeriod: 5
+  DecisionStep: 0
+  TakeActionsBetweenDecisions: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(Vector3.up * speed * 0.02f);
 
         Vector3 screenPos = cam.WorldToViewportPoint(transform.position);
         if (screenPos.y > 1f)
@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
 
         if (chicken != null)
         {
+            Debug.Log("A chicken was hit!");
             chicken.TakeDamage(damage);
             Destroy(gameObject);
         }

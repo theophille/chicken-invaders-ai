@@ -36,7 +36,7 @@ public class Chicken : MonoBehaviour
     }
 
     public void Init(int col, float gap, float rowBaseX, float direction,
-                     float moveDistance, float moveSpeed, float homeY, Transform ship)
+        float moveDistance, float moveSpeed, float homeY, Transform ship)
     {
         _col = col;
         _gap = gap;
@@ -109,7 +109,16 @@ public class Chicken : MonoBehaviour
     {
         _currentHealth -= amount;
         if (_currentHealth <= 0)
+        {
+            if (ShipAgent.Instance != null)
+            {
+                ShipAgent.Instance.AddCustomReward(+1f);
+                Debug.Log($"[ShipAgent] Chicken killed. EpisodeReward={ShipAgent.Instance.CurrentEpisodeReward:F2}");
+            }
+
             Destroy(gameObject);
+            MatrixSpawner.Instance?.NotifyChickenDead(); // notify spawner after destroy
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -117,6 +126,7 @@ public class Chicken : MonoBehaviour
         if (other.CompareTag("Ship"))
         {
             Destroy(gameObject);
+            MatrixSpawner.Instance?.NotifyChickenDead(); // also notify here
         }
     }
 }
